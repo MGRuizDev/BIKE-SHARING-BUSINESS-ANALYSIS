@@ -3,7 +3,7 @@
 <br>
 <br>
 
-###Establishing the Problem
+### Establishing the Problem
 
 The goal is to convert casual riders into annual members. 
 There are three important aspects that can lead us to this goal: 
@@ -19,7 +19,8 @@ customers committing to an annual membership.
 
     - What are the behaviors of the casual and annual riders and how do they contrast?
     - What aspects of the bikes are more in demand and why?
-    - Consider price comparison against competitors (being these not only bike shares but also other types of transportation: car, lift, and bus)?
+    - Consider price comparison against competitors (being these not only bike shares 
+    	but also other types of transportation: car, lift, and bus)?
     - What customers think about the bikes usability, and the app functionality. What is the feedback?
     - What is representing the largest source of profit in the business and could it be feasible to adjust?
 
@@ -38,7 +39,7 @@ Also, the same analysis might open new questions.
 <br>
 <br>
 
-###Preparation of the data.
+### Preparation of the data.
 
 <br>
 <br>
@@ -72,7 +73,7 @@ Before the data loading to database is important to remove duplicates from ride_
 <br>
 <br>
 
-###Processing the data to make it useful.
+### Processing the data to make it useful.
 
 <br>
 <br>
@@ -84,10 +85,11 @@ therefore SQL is going to be used to prepare (clean and transform) the data.
 I have created copies of the files, leaving the originals stored in a safe place in case their use is needed.
 
 The process of cleaning the data are to ensure data has accuracy, 
-completeness, consistency, relevance, and uniformity
+completeness, consistency, relevance, and uniformity.
 
+<br>
 
-####Data Cleaning.
+#### Data Cleaning.
 
 Sources of errors: Did you use the right tools and functions to find the source of the errors in your dataset?
 Null data: Null data was found in different columns, but specially in the primary key, which entry has to be removed.
@@ -102,7 +104,9 @@ Misleading variable labels (columns): Columns named correctly.
 Truncated data: Not Found
 Business Logic: Data has logic.
 
-####Data Transformation.
+<br>
+
+#### Data Transformation.
 
 Two new columns had to be created:
 Trip_duration
@@ -133,12 +137,9 @@ CREATE TABLE ride_travel AS
         	DATE_PART('dow', started_at) AS day_of_week
 FROM ride_trip;
 
-
-<br>
 <br>
 
-
-####Dataset design.
+#### Dataset design.
 
 It consist of only one table with 15 columns.
 
@@ -153,7 +154,7 @@ It consist of only one table with 15 columns.
 <br>
 <br>
 
-####Calculations, Metrics, and observations:
+#### Calculations, Metrics, and observations:
 
 The max ride_length 
 The mode of day_of_week
@@ -172,10 +173,15 @@ Exploring different seasons to make some initial observations.
 
 
 
-###Sharing (Vizualization)
+### Sharing (Vizualization)
 
 <br>
 <br>
+<br>
+<br>
+
+### Acting
+
 <br>
 <br>
 
