@@ -148,31 +148,37 @@ It consist of only one table with 15 columns and 4200000 Millions rows.
 <br>
 <br>
 
-###Analysing the data.
+### Analysing the data.
 
-<br>
 <br>
 
 #### Calculations, Metrics, and observations:
 
-The max ride_length 
-The mode of day_of_week
-The average of ride_length (for members and casual riders)Try rows = member_casual; Values = Average of ride_length. 
-The average ride_length for users by day_of_week. Try columns = day_of_week; Rows = member_casual; Values = Average of ride_length.
-The number of rides for users by day_of_week by adding Count of trip_id to Values. 
-Which bike is preferred by casual and annual members?
-Which bike is used for long trips or short trips, by casual and annual members?
-Which station is the busiest?
-What is the average time of trip duration?
-Number of trips by day, month, and year?
+The max ride_length. <br>
+The mode of day_of_week. <br>
+The average of ride_length (for members and casual riders)Try rows = member_casual; Values = Average of ride_length.  <br>
+The average ride_length for users by day_of_week. Try columns = day_of_week; Rows = member_casual; Values = Average of ride_length. <br>
+The number of rides for users by day_of_week by adding Count of trip_id to Values.  <br>
+Which bike is preferred by casual and annual members? <br>
+Which bike is used for long trips or short trips, by casual and annual members? <br>
+Which station is the busiest? <br>
+What is the average time of trip duration? <br>
+Number of trips by day, month, and year? <br>
 
 Exploring different seasons to make some initial observations.
 
 
-
+<br>
+<br>
+<br>
+<br>
 
 
 ### Sharing (Vizualization)
+<br>
+
+
+
 
 <br>
 <br>
@@ -182,10 +188,13 @@ Exploring different seasons to make some initial observations.
 ### Acting
 
 <br>
-<br>
 
     - What aspects of the bikes are more in demand and why?
     - Consider price comparison against competitors (being these not only bike shares but also other types of transportation: car, lift, and bus)?
     - What customers think about the bikes usability, and the app functionality. What is the feedback?
     - What is representing the largest source of profit in the business and could it be feasible to adjust?
 
+<br>
+<br>
+<br>
+<br>
