@@ -4,7 +4,7 @@
 <br>
 
 ### Establishing the Problem
-
+<br>
 The goal is to convert casual riders into annual members. 
 There are three important aspects that can lead us to this goal: 
 
@@ -42,10 +42,9 @@ Also, the same analysis might open new questions.
 ### Preparation of the data.
 
 <br>
-<br>
 
 The data comes from a reputable source. It has been made available by Motivate International Inc. 
-It can be access here:
+It can be access here: <br>
 https://divvy-tripdata.s3.amazonaws.com/index.html
 
 Data was obtained in CSV format. There are 11 files: 
@@ -55,17 +54,17 @@ The data will be loaded and organized in Postgresql Database.
 
 A description of all data sources used 
 
-Information:  Trip Data
-Type: 9 files (.csv) corresponding to the last 9 months of service.
-Method: Manually by email from Operations manager.
-Condition: Dirty. Duplicates, Empty values, Wrong data types, Syntax Errors.
+	* Information:  Trip Data
+	* Type: 9 files (.csv) corresponding to the last 9 months of service.
+	* Method: Manually by email from Operations manager.
+	* Condition: Dirty. Duplicates, Empty values, Wrong data types, Syntax Errors.
+	
+	* Information: Stations Data.
+	* Type: 1 file (.csv) with bike stations data from the 2014 year.
+	* Method: Manually by email from Operations manager.
+	* Condition: Dirty. Duplicates, Empty values, Wrong data types, Syntax Errors.
 
-Information: Stations Data.
-Type: 1 file (.csv) with bike stations data from the 2014 year.
-Method: Manually by email from Operations manager.
-Condition: Dirty. Duplicates, Empty values, Wrong data types, Syntax Errors.
-
-Notes:
+Notes:<br>
 Before the data loading to database is important to remove duplicates from ride_id
 
 <br>
@@ -75,7 +74,6 @@ Before the data loading to database is important to remove duplicates from ride_
 
 ### Processing the data to make it useful.
 
-<br>
 <br>
 
 Due to the large amount of data being at least 4 million rows, 
@@ -90,7 +88,7 @@ completeness, consistency, relevance, and uniformity.
 <br>
 
 #### Data Cleaning.
-
+<br>
 Sources of errors: Did you use the right tools and functions to find the source of the errors in your dataset?
 Null data: Null data was found in different columns, but specially in the primary key, which entry has to be removed.
 Misspelled words: Using Group BY and observing, there were not misspells. Not Found.
@@ -109,8 +107,9 @@ Business Logic: Data has logic.
 #### Data Transformation.
 
 Two new columns had to be created:
-Trip_duration
-day_of_week
+
+		* Trip_duration
+		* day_of_week
 
 In order to do that the first plan was to update the table with these two new columns,
 but the query will take a long time to run. 
@@ -119,29 +118,29 @@ adding these two new columns with calculations from the first table.
 First table was m=named ride_trip. New table is made ride_travel.(Postgresql Query)
 
 
-CREATE TABLE ride_travel AS
-	  SELECT ride_id, 
-        	rideable_type, 
-        	started_at, 
-        	ended_at, 
-        	start_station_name, 
-        	start_station_id, 
-        	end_station_name, 
-        	end_station_id, 
-        	start_lat, 
-        	start_lng, 
-        	end_lat, 
-        	end_lng, 
-        	member_casual, 
-        	(cast (ended_at::timestamp as time) - cast (started_at::timestamp as time)) AS trip_duration,
-        	DATE_PART('dow', started_at) AS day_of_week
+CREATE TABLE ride_travel AS <br>
+	  SELECT ride_id,  <br>
+        	rideable_type,  <br>
+        	started_at,  <br>
+        	ended_at,  <br>
+        	start_station_name,  <br>
+        	start_station_id,  <br>
+        	end_station_name,  <br>
+        	end_station_id,  <br>
+        	start_lat,  <br>
+        	start_lng,  <br>
+        	end_lat, <br>
+        	end_lng, <br>
+        	member_casual, <br>
+        	(cast (ended_at::timestamp as time) - cast (started_at::timestamp as time)) AS trip_duration, <br>
+        	DATE_PART('dow', started_at) AS day_of_week <br>
 FROM ride_trip;
 
 <br>
 
 #### Dataset design.
 
-It consist of only one table with 15 columns.
+It consist of only one table with 15 columns and 4200000 Millions rows.
 
 
 <br>
