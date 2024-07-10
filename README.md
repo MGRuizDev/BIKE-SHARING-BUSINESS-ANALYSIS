@@ -153,19 +153,47 @@ It consist of only one table with 15 columns and 4200000 Millions rows.
 <br>
 
 #### Calculations, Metrics, and observations:
-
+<br>
+###### Using Postgresql.
+<br>
 The max ride_length. <br>
-The mode of day_of_week. <br>
-The average of ride_length (for members and casual riders)Try rows = member_casual; Values = Average of ride_length.  <br>
-The average ride_length for users by day_of_week. Try columns = day_of_week; Rows = member_casual; Values = Average of ride_length. <br>
-The number of rides for users by day_of_week by adding Count of trip_id to Values.  <br>
-Which bike is preferred by casual and annual members? <br>
-Which bike is used for long trips or short trips, by casual and annual members? <br>
-Which station is the busiest? <br>
-What is the average time of trip duration? <br>
-Number of trips by day, month, and year? <br>
+SELECT ride_id, rideable_type, started_at, member_casual, trip_duration, day_of_week FROM ride_travel <br>
+WHERE trip_duration = (SELECT MAX(trip_duration) FROM ride_travel);<br>
+A Sunday on April 2024, a casual user ride a electric bike for 22:47:19, baing this the longest trip. <br>
 
-Exploring different seasons to make some initial observations.
+<br>
+
+The mode of day_of_week. <br>
+SELECT MODE() WITHIN GROUP (ORDER BY day_of_week) AS "Most popular day" FROM ride_travel;<br>
+Saturday is the most popular day to ride the bikes.<br>
+
+<br>
+
+The number of rides and average of ride_length for members, casual riders, and days of the week (tweak the query to analyse the next observations<br>
+SELECT member_casual AS membership, day_of_week, COUNT(ride_id) AS "Number of rides", AVG(trip_duration) AS "Average trip duration" 
+FROM ride_travel <br>
+GROUP BY member_casual, day_of_week, rideable_type; <br>
+Yearly members double the number of rides of the casual riders. 
+The average trip duration of Yearly members is about 30% less than casual riders.
+On weekends casual riders activity increases, and yearly riders activity reduces, despite this, yearly riders demand is more than casual riders.
+<br>
+You can include "readable_type" to this query and observe that casual riders prefere electric bikes and yearly members prefere classic bikes. Also, classic bikes are mostly used for long trips.
+
+<br>
+
+Which station is the busiest? <br>
+SELECT start_station_name, COUNT(ride_id) FROM ride_travel <br>
+GROUP BY start_station_name <br>
+ORDER BY COUNT(ride_id) DESC; <br>
+The bike stations around the River North area are the busiest.<br>
+
+<br>
+
+Number of trips by day, month, and year? <br>
+SELECT DATE_PART('year', started_at) AS "Yearly Period", DATE_PART('month', started_at) AS "Monthly Period", COUNT(ride_id) AS "Number of rides"<br>
+FROM ride_travel <br>
+GROUP BY "Yearly Period", "Monthly Period"; <br>
+By September the number of rides start to going down until February were the number of rides slowly start to going back up.
 
 
 <br>
