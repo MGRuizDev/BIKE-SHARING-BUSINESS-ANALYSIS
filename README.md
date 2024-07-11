@@ -79,6 +79,8 @@ Before the data loading to database is important to remove duplicates from ride_
 Due to the large amount of data being at least 4 million rows, 
 It is not appropriate to use a spreadsheet software, 
 therefore SQL is going to be used to prepare (clean and transform) the data.
+
+<br>
 <br>
 ![Table Appending](/images/TableAppending.png)
 <br>
@@ -208,6 +210,7 @@ GROUP BY "Yearly Period", "Monthly Period"; <br>
 <br>
 By September the number of rides start to going down until February were the number of rides slowly start to going back up.
 
+<br>
 <br>
 
 ![Queries](/images/Queries.png)
