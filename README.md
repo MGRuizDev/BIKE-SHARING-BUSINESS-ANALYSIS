@@ -82,6 +82,7 @@ therefore SQL is going to be used to prepare (clean and transform) the data.
 
 <br>
 <br>
+
 ![Table Appending](/images/TableAppending.png)
 <br>
 I have created copies of the files, leaving the originals stored in a safe place in case their use is needed.
