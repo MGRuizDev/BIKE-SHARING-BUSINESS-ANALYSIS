@@ -154,7 +154,9 @@ It consist of only one table with 15 columns and 4200000 Millions rows.
 
 #### Calculations, Metrics, and observations:
 <br>
-##### Using Postgresql.
+
+##### Using Postgresql
+
 <br>
 <br>
 The max ride_length. <br>
@@ -219,7 +221,11 @@ By September the number of rides start to going down until February were the num
 <br>
 <br>
 <br>
-[View Dashboard] (https://public.tableau.com/views/BIKESHARINGBUSINESSANALYSIS/BikeRidesBehaviorAndUsageHabits?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+
+[View Dashboard](https://public.tableau.com/views/BIKESHARINGBUSINESSANALYSIS/BikeRidesBehaviorAndUsageHabits?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+
+
+
 ### Acting
 
 <br>
