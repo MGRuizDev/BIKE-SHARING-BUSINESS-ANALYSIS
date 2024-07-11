@@ -79,7 +79,9 @@ Before the data loading to database is important to remove duplicates from ride_
 Due to the large amount of data being at least 4 million rows, 
 It is not appropriate to use a spreadsheet software, 
 therefore SQL is going to be used to prepare (clean and transform) the data.
-
+<br>
+[Table Appending](\images\TableAppending.png)
+<br>
 I have created copies of the files, leaving the originals stored in a safe place in case their use is needed.
 
 The process of cleaning the data are to ensure data has accuracy, 
@@ -89,7 +91,6 @@ completeness, consistency, relevance, and uniformity.
 
 #### Data Cleaning.
 <br>
-Sources of errors: Did you use the right tools and functions to find the source of the errors in your dataset?
 Null data: Null data was found in different columns, but specially in the primary key, which entry has to be removed.
 Misspelled words: Using Group BY and observing, there were not misspells. Not Found.
 Mistyped numbers: Not Found
@@ -115,7 +116,7 @@ In order to do that the first plan was to update the table with these two new co
 but the query will take a long time to run. 
 The second option, that was used, was to create a new table with the information of the first one,
 adding these two new columns with calculations from the first table.
-First table was m=named ride_trip. New table is made ride_travel.(Postgresql Query)
+First table was mnamed ride_trip. New table is made ride_travel.(Postgresql Query)
 
 
 CREATE TABLE ride_travel AS <br>
@@ -136,6 +137,9 @@ CREATE TABLE ride_travel AS <br>
         	DATE_PART('dow', started_at) AS day_of_week <br>
 FROM ride_trip;
 
+<br>
+
+[New Table](\images\CreateNewTable.png)
 <br>
 
 #### Dataset design.
@@ -204,7 +208,9 @@ GROUP BY "Yearly Period", "Monthly Period"; <br>
 <br>
 By September the number of rides start to going down until February were the number of rides slowly start to going back up.
 
+<br>
 
+[Queries](\images\Queries.png)
 <br>
 <br>
 <br>
