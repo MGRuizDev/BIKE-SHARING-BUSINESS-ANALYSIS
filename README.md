@@ -80,7 +80,7 @@ Due to the large amount of data being at least 4 million rows,
 It is not appropriate to use a spreadsheet software, 
 therefore SQL is going to be used to prepare (clean and transform) the data.
 <br>
-[Table Appending](\images\TableAppending.png)
+![Table Appending](/images/TableAppending.png)
 <br>
 I have created copies of the files, leaving the originals stored in a safe place in case their use is needed.
 
@@ -139,7 +139,7 @@ FROM ride_trip;
 
 <br>
 
-[New Table](\images\CreateNewTable.png)
+![New Table](/images/CreateNewTable.png)
 <br>
 
 #### Dataset design.
@@ -210,7 +210,7 @@ By September the number of rides start to going down until February were the num
 
 <br>
 
-[Queries](\images\Queries.png)
+![Queries](/images/Queries.png)
 <br>
 <br>
 <br>
@@ -220,16 +220,15 @@ By September the number of rides start to going down until February were the num
 ### Sharing (Vizualization)
 <br>
 
-
-
-
-<br>
-<br>
-<br>
+![Queries](/images/BikeTableau.png)
 <br>
 
 [View Dashboard](https://public.tableau.com/views/BIKESHARINGBUSINESSANALYSIS/BikeRidesBehaviorAndUsageHabits?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
+<br>
+<br>
+<br>
+<br>
 
 
 ### Acting
