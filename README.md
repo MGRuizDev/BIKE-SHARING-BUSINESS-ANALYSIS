@@ -154,7 +154,7 @@ It consist of only one table with 15 columns and 4200000 Millions rows.
 
 #### Calculations, Metrics, and observations:
 <br>
-#####  Using Postgresql.
+##### Using Postgresql.
 <br>
 <br>
 The max ride_length. <br>
@@ -162,7 +162,7 @@ The max ride_length. <br>
 SELECT ride_id, rideable_type, started_at, member_casual, trip_duration, day_of_week FROM ride_travel <br>
 WHERE trip_duration = (SELECT MAX(trip_duration) FROM ride_travel);<br>
 <br>
-A Sunday on April 2024, a casual user ride a electric bike for 22:47:19, baing this the longest trip. <br>
+A Sunday on April 2024, a casual user ride a electric bike for 22:47:19, being this the longest trip. <br>
 <br>
 <br>
 The mode of day_of_week. <br>
@@ -219,7 +219,7 @@ By September the number of rides start to going down until February were the num
 <br>
 <br>
 <br>
-
+[View Dashboard] (https://public.tableau.com/views/BIKESHARINGBUSINESSANALYSIS/BikeRidesBehaviorAndUsageHabits?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 ### Acting
 
 <br>
