@@ -253,14 +253,5 @@ Despite the demand of annual riders is bigger the average trip duration of yearl
 It is interesting to notice that casual riders prefer calssic bike and in general classic bikes are used for long trips. It could be important to go in deep into this preference and if it has to do with lack of understanding of technology, or a frankly lower capacity on electric bikes, or just an inventory deficit that should be addressed. <br>
 
 <br>
-
-
-Are there any next steps you or your stakeholders can take based on your findings?
-Is there additional data you could use to expand on your findings?
-
-
-
-<br>
-<br>
 <br>
 <br>
