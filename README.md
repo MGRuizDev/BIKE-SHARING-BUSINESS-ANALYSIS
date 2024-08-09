@@ -94,17 +94,17 @@ completeness, consistency, relevance, and uniformity.
 
 #### Data Cleaning.
 <br>
-Null data: Null data was found in different columns, but specially in the primary key, which entry has to be removed.
-Misspelled words: Using Group BY and observing, there were not misspells. Not Found.
-Mistyped numbers: Not Found
-Extra spaces and characters: Not Found
-Duplicates: Using DISTINCT in SQL, there were not duplicates in primary keys or columns were are not needed. Not Found.
-Mismatched data types: Not Found
-Messy (inconsistent) strings: all of the strings are consistent and meaningful.
-Messy (inconsistent) date formats: Dates were format correctly.
-Misleading variable labels (columns): Columns named correctly.
-Truncated data: Not Found
-Business Logic: Data has logic.
+Null data: Null data was found in different columns, but specially in the primary key, which entry has to be removed. <br>
+Misspelled words: Using Group BY and observing, there were not misspells. Not Found. <br>
+Mistyped numbers: Not Found. <br>
+Extra spaces and characters: Not Found. <br>
+Duplicates: Using DISTINCT in SQL, there were not duplicates in primary keys or columns were are not needed. Not Found. <br>
+Mismatched data types: Not Found. <br>
+Messy (inconsistent) strings: all of the strings are consistent and meaningful. <br>
+Messy (inconsistent) date formats: Dates were format correctly. <br>
+Misleading variable labels (columns): Columns named correctly. <br>
+Truncated data: Not Found. <br>
+Business Logic: Data has logic. <br>
 
 <br>
 
@@ -116,9 +116,9 @@ Two new columns had to be created:
 		* day_of_week
 
 In order to do that the first plan was to update the table with these two new columns,
-but the query will take a long time to run. 
+but the query will take a long time to run. <br>
 The second option, that was used, was to create a new table with the information of the first one,
-adding these two new columns with calculations from the first table.
+adding these two new columns with calculations from the first table. <br>
 First table was mnamed ride_trip. New table is made ride_travel.(Postgresql Query)
 
 
@@ -168,7 +168,8 @@ It consist of only one table with 15 columns and 4200000 Millions rows.
 <br>
 The max ride_length. <br>
 <br>
-SELECT ride_id, rideable_type, started_at, member_casual, trip_duration, day_of_week FROM ride_travel <br>
+SELECT ride_id, rideable_type, started_at, member_casual, trip_duration, day_of_week <br>
+FROM ride_travel <br>
 WHERE trip_duration = (SELECT MAX(trip_duration) FROM ride_travel);<br>
 <br>
 A Sunday on April 2024, a casual user ride a electric bike for 22:47:19, being this the longest trip. <br>
@@ -176,19 +177,20 @@ A Sunday on April 2024, a casual user ride a electric bike for 22:47:19, being t
 <br>
 The mode of day_of_week. <br>
 <br>
-SELECT MODE() WITHIN GROUP (ORDER BY day_of_week) AS "Most popular day" FROM ride_travel;<br>
+SELECT MODE() WITHIN GROUP (ORDER BY day_of_week) AS "Most popular day"  <br>
+FROM ride_travel; <br>
 <br>
 Saturday is the most popular day to ride the bikes.<br>
 <br>
 <br>
 The number of rides and average of ride_length for members, casual riders, and days of the week (tweak the query to analyse the next observations<br>
 <br>
-SELECT member_casual AS membership, day_of_week, COUNT(ride_id) AS "Number of rides", AVG(trip_duration) AS "Average trip duration" 
+SELECT member_casual AS membership, day_of_week, COUNT(ride_id) AS "Number of rides", AVG(trip_duration) AS "Average trip duration" <br>
 FROM ride_travel <br>
 GROUP BY member_casual, day_of_week, rideable_type; <br>
 <br>
-Yearly members double the number of rides of the casual riders. 
-The average trip duration of Yearly members is about 30% less than casual riders.
+Yearly members double the number of rides of the casual riders. <br>
+The average trip duration of Yearly members is about 30% less than casual riders. <br>
 On weekends casual riders activity increases, and yearly riders activity reduces, despite this, yearly riders demand is more than casual riders.
 <br>
 You can include "readable_type" to this query and observe that casual riders prefere electric bikes and yearly members prefere classic bikes. Also, classic bikes are mostly used for long trips.
@@ -196,7 +198,8 @@ You can include "readable_type" to this query and observe that casual riders pre
 <br>
 Which station is the busiest? <br>
 <br>
-SELECT start_station_name, COUNT(ride_id) FROM ride_travel <br>
+SELECT start_station_name, COUNT(ride_id) <br>
+FROM ride_travel <br>
 GROUP BY start_station_name <br>
 ORDER BY COUNT(ride_id) DESC; <br>
 <br>
@@ -239,10 +242,23 @@ By September the number of rides start to going down until February were the num
 
 <br>
 
-    - What aspects of the bikes are more in demand and why?
-    - Consider price comparison against competitors (being these not only bike shares but also other types of transportation: car, lift, and bus)?
-    - What customers think about the bikes usability, and the app functionality. What is the feedback?
-    - What is representing the largest source of profit in the business and could it be feasible to adjust?
+The company first assumption that profits would increase if they manage to make casual riders into annual riders members had some reason. Mainly because the majority of profits come from annual memberships. But after some analysis I notice that even though this is true, it was because most of the riders were already annual members and only a small part of them are casual riders. This finding will assume that nevertheless the company could convince casual riders to acquired annual membership, the amount of profits would not increase has expected. <br>
+
+<br>
+
+Despite the demand of annual riders is bigger the average trip duration of yearly members is about 30% less than casual riders, and on weekends casual riders activity increases. This assumes that local riders which activities are more incline to work related transportation, and local convenience trips, than pleasure and family activities. The majority of riders are annual members and use the bikes for home to work transportation, residing locally. And of course a portion of casual riders that do not need the service for daily activities decreases in winter time when the cold of a city like Chicago is hard. <br>
+
+<br> 
+
+It is interesting to notice that casual riders prefer calssic bike and in general classic bikes are used for long trips. It could be important to go in deep into this preference and if it has to do with lack of understanding of technology, or a frankly lower capacity on electric bikes, or just an inventory deficit that should be addressed. <br>
+
+<br>
+
+
+Are there any next steps you or your stakeholders can take based on your findings?
+Is there additional data you could use to expand on your findings?
+
+
 
 <br>
 <br>
